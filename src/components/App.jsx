@@ -3,7 +3,7 @@ import React from 'react';
 export default function App() {
   return (
     <div>
-        <form
+        <form action="/api/upload" encType="multipart/form-data" method="post"
         style={{
             display:"flex",
             flexDirection:"column",
@@ -11,9 +11,12 @@ export default function App() {
             margin:"auto",
             gap:10
         }}>
-        <h3>Submit your Resume</h3>
-        <input type="file" />
-        <input type="submit" value='Submit'/>
+        <h3>File Upload with <code>Node.js</code></h3>
+        <div>Select a file:
+            <input type="file" name="file" multiple = "multiple" />
+        </div>
+        
+        <input type="submit" value='Upload'/>
         </form>
     </div>
   )
